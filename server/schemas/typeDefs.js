@@ -1,5 +1,6 @@
 const { gql } = require('apollo-server-express');
 
+// Define the GraphQL schema using the gql tagged template literal
 const typeDefs = gql`
   type User {
     _id: ID
