@@ -48,16 +48,18 @@ Once the application is running, open your browser and navigate to http://localh
 
 ## Screenshots
 
-1. **Search for Books**
-
+1. **Homepage**
+![alt text](assets/images/homepage.jpg)
 2. **User Authentication**
-
-3. **Save Books**
-
-4. **View Saved Books**
-
-5. **Remove Books**
-
+![alt text](assets/images/user-signup.jpg)
+3. **Search for Books**
+![alt text](assets/images/searched-books.jpg)
+4. **Save Books**
+![alt text](assets/images/saved-books.jpg)
+5. **View Saved Books**
+![alt text](assets/images/view-saved-books.jpg)
+6. **Remove Books**
+![alt text](assets/images/remove-saved-books.jpg)
 ## Features
 * **Search for Books**: Users can search for books using the Google Books API.
 * **User Authentication**: Users can sign up and log in to their accounts.
