@@ -1,4 +1,3 @@
-// client/src/components/LoginForm.jsx
 // see SignupForm.js for comments
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
@@ -7,17 +6,25 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
+  // State to manage form input data
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+
+  // State to manage form validation
   const [validated] = useState(false);
+
+  // State to manage alert visibility
   const [showAlert, setShowAlert] = useState(false);
 
+  // Hook to execute the login mutation
   const [login, { error }] = useMutation(LOGIN_USER);
 
+  // Handler for form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  // Handler for form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,16 +35,19 @@ const LoginForm = () => {
     }
 
     try {
+      // Execute the login mutation
       const { data } = await login({
         variables: { ...userFormData },
       });
 
+      // Save the token to local storage and log in the user
       Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
 
+    // Clear form input fields
     setUserFormData({
       email: '',
       password: '',
